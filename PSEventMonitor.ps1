@@ -101,7 +101,7 @@ $MailServer = $xmlConfig.Configuration.MailServer
 [string[]]$computers = $xmlConfig.Configuration.computers.split(",")
 $ListOfEvents = @{}
 #import the list of Event Source and ID
-Import-Csv $eventsList |ForEach-Object {$ListOfEvents[$_.source + '#' + $_.id] = 1} 
+Import-Csv $eventsList |ForEach-Object {$ListOfEvents[$_.source + '#' + $_.id] = 1}
  
 #see if we have a history file to use, if not create an empty $logHistory
 if (Test-Path $historyLog){$logHistory = Import-Clixml $historyLog} 
